@@ -40,7 +40,6 @@ export default function RootLayout({
               <main className="flex-1 p-4 w-full">
                 {children}
               </main>
-
             </div>
           </div>
         </ThemeProvider>
