@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/theme/ThemeProvider";
-import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,17 +29,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider defaultTheme="system">
-          <div className="flex flex-col min-h-screen items-center">
-            <div className="w-full max-w-3xl flex flex-col flex-1">
-              <header className="flex items-center justify-between p-4 border-b">
-                <h1 className="text-xl font-bold">Streaming UI</h1>
-                <ThemeToggle />
-              </header>
-
-              <main className="flex-1 p-4 w-full">
-                {children}
-              </main>
-            </div>
+          <div className="flex flex-col max-h-screen items-center w-full max-w-3xl flex-1 mx-auto">
+            {children}
           </div>
         </ThemeProvider>
       </body>
