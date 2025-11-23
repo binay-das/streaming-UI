@@ -33,7 +33,7 @@ A modern, minimalistic AI chat interface built with Next.js, Tailwind CSS, and t
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/streaming-ui.git
+    git clone https://github.com/binay-das/streaming-ui.git
     cd streaming-ui
     ```
 
@@ -50,7 +50,7 @@ A modern, minimalistic AI chat interface built with Next.js, Tailwind CSS, and t
     Create a `.env` file in the root directory and add your API key:
 
     ```env
-    API_KEY=your_api_key_here
+    API_KEY=
     ```
 
 4.  **Run the development server:**
