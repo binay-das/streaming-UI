@@ -1,7 +1,7 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // option 1: (cloud gemini)
 /*
+import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 
 export async function POST(req: Request) {
