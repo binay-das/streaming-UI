@@ -45,13 +45,16 @@ A modern, minimalistic AI chat interface built with Next.js, Tailwind CSS, and t
     npm install
     ```
 
-3.  **Configure Environment Variables:**
+3.  **Configuration**
 
-    Create a `.env` file in the root directory and add your API key:
+Create a `.env` file in the root directory and add your API key:
 
-    ```env
-    API_KEY=
-    ```
+```env
+API_KEY=your_api_key_here
+```
+
+
+> **No API Key?** You can run the model locally also. The codebase is configured to support local llm models also. Go through it and you will find the configuration.
 
 4.  **Run the development server:**
 
