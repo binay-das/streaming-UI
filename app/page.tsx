@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import { useTheme } from "@/components/theme/ThemeProvider";
 import ThemeToggle from "@/components/theme/ThemeToggle";
+import UserAvatar from "@/components/UserAvatar";
 import { Copy, Send, Loader2, Bot, User, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -131,7 +132,10 @@ export default function Home() {
           <Bot className="w-6 h-6 text-primary" />
           <h1 className="text-xl font-semibold tracking-tight">Chat</h1>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <UserAvatar />
+        </div>
       </header>
 
       <div className="flex-1 overflow-hidden relative">
@@ -143,7 +147,7 @@ export default function Home() {
                 <p className="text-lg font-medium">How can I help you today?</p>
               </div>
             )}
-            
+
             {messages.map((msg, index) => (
               <div
                 key={index}
@@ -157,7 +161,7 @@ export default function Home() {
                     <Bot className="w-5 h-5 text-primary" />
                   </div>
                 )}
-                
+
                 <div
                   className={cn(
                     "relative group max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-sm",
@@ -169,7 +173,7 @@ export default function Home() {
                   <div className="prose prose-sm dark:prose-invert max-w-none break-words">
                     <ReactMarkdown>{msg.content}</ReactMarkdown>
                   </div>
-                  
+
                   {msg.role === "assistant" && !isLoading && (
                     <TooltipProvider>
                       <Tooltip>
@@ -233,9 +237,9 @@ export default function Home() {
               placeholder="Message Gemini..."
               disabled={isLoading}
             />
-            <Button 
-              type="submit" 
-              size="icon" 
+            <Button
+              type="submit"
+              size="icon"
               disabled={!input.trim() || isLoading}
               className={cn(
                 "rounded-full h-8 w-8 transition-all",
